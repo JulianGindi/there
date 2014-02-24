@@ -1,0 +1,14 @@
+{
+  "name": "there",
+  "description": "get up-to-date information on any location in the world",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*",
+    "mocha": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-watch": "*"
+  }
+}
