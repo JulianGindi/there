@@ -5,13 +5,7 @@
 
   app = express();
 
-  app.get('/', function(req, res) {
-    var body;
-    body = 'Hello World';
-    res.setHeader('Content-Type', 'text/plain');
-    res.setHeader('Content-Length', Buffer.byteLength(body));
-    return res.end(body);
-  });
+  require('./build/there.js')(app);
 
   app.listen(3000);
 
