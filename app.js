@@ -5,12 +5,12 @@
 
   app = express();
 
+  app.use(express["static"](__dirname + '/static'));
+
   app.get('/', function(req, res) {
-    var body;
-    body = 'Hello World';
     res.setHeader('Content-Type', 'text/plain');
-    res.setHeader('Content-Length', Buffer.byteLength(body));
-    return res.end(body);
+    res.sendfile(__dirname + '/static/index.html');
+    return res.end();
   });
 
   app.listen(3000);

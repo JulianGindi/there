@@ -10,15 +10,29 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       scripts: {
-        files: ['src/js', 'app.coffee'],
+        files: ['src/js/*.coffee', 'app.coffee'],
         tasks: ['coffee']
+      },
+      css: {
+        files: ['sass/*.scss', 'sass/partials/*.scss'],
+        tasks:['compass']
+      }
+    },
+
+    compass: {
+      dist: {
+        options: {
+          config: 'config.rb'
+        }
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['coffee']);
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.registerTask('default', ['watch']);
 };
