@@ -1,0 +1,159 @@
+.top-header {
+
+    .search-part {
+        background-color: #02B370;
+        height: 90px;
+
+        @include box-sizing(border-box);
+        @include pie-clearfix();
+
+        .logo {
+            float: left;
+            @include hide-text();
+            width: 120px;
+            height: 45px;
+            background-image: url(../images/logo.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin-top: 23px;
+            margin-right: 30px;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .search {
+            float: right;
+            display: block;
+            height: 45px;
+            margin-top: 23px;
+            @include experimental-value(width, calc(100% - 150px));
+            @include pie-clearfix();
+
+            form {
+                height: 100%;
+            }
+
+            input[type=text] {
+                border: 0px;
+                height: 43px;
+                background-color: #02B370;
+                @include box-sizing(border-box);
+                @include appearance(none);
+                // border-bottom: 2px solid #fff;
+
+                @include experimental-value(width, calc(100% - 150px));
+                float: left;
+                display: block;
+                text-align: center;
+                font-size: 2em;
+                color: white;
+
+                @include input-placeholder {
+                    color: shade(#02B370, 20);
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            input[type=submit] {
+                display: block;
+                float: left;
+                width: 120px;
+                margin-left: 30px;
+                @include appearance(none);
+                background-image: url(../images/search.png);
+                background-repeat: no-repeat;
+                background-color: #02B370;
+                background-position: right center;
+                background-size: 40px;
+                border: none;
+                height: 100%;
+                @include hide-text();
+            }
+        }
+    }
+
+    .date-part {
+        background-color: #068A57;
+        height: 75px;
+
+        .container {
+            @include pie-clearfix();
+            max-width: 430px;
+            margin: 0 auto;
+            height: 100%;
+
+            a, span {
+                display: block;
+                height: 100%;
+                float: left;
+                @include box-sizing(border-box);
+                padding-top: 30px;
+            }
+
+            .btn-prev, .btn-next {
+                width: 35px;
+                background-color: #02B370;
+                height: 35px;
+                @include border-radius(35px);
+                @include box-sizing(border-box);
+                margin-top: 22px;
+                position: relative;
+                @include hide-text();
+
+                >span {
+                    @include hide-text();
+                }
+
+                div {
+                    @include transition(all 300ms ease-in-out);
+                }
+            }
+
+            .btn-prev {
+                div {
+                    position: absolute;
+                    top: 11px; left: 9px;
+                    @include arrow-left(#fff);
+                }
+
+                &:hover {
+                    div {
+                        @include arrow-left(tint(#02B370, 50));
+                    }
+                }
+            }
+
+            .btn-next {
+                div {
+                    position: absolute;
+                    top: 11px; left: 13px;
+                    @include arrow-right(#fff);
+                }
+
+                &:hover {
+                    div {
+                        @include arrow-right(tint(#02B370, 50));
+                    }
+                }
+            }
+
+            >span {
+                @include experimental-value(width, calc(100% - 70px));
+                text-align: center;
+                font-size: 1.4em;
+                color: #fff;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: 100;
+                letter-spacing: 0.08em;
+            }
+        }
+    }
+
+}

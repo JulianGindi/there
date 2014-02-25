@@ -1,0 +1,31 @@
+@mixin arrow-top($color) {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 7.5px 13.0px 7.5px;
+    border-color: transparent transparent $color transparent;
+}
+
+@mixin arrow-bottom($color) {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 13.0px 7.5px 0 7.5px;
+    border-color: $color transparent transparent transparent;
+}
+
+@mixin arrow-left($color) {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 7.5px 13.0px 7.5px 0;
+    border-color: transparent $color transparent transparent;
+}
+
+@mixin arrow-right($color) {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 7.5px 0 7.5px 13.0px;
+    border-color: transparent transparent transparent $color;
+}

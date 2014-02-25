@@ -1,0 +1,24 @@
+.geo-details {
+    @include pie-clearfix();
+    margin-bottom: 30px;
+
+    .map, .time, .weather {
+        @include box-sizing(border-box);
+        width: 32%;
+        float: left;
+        height: 200px;
+        background-color: #eaeaea;
+    }
+
+    .map {
+        margin-right: 2%;
+    }
+
+    .time {
+        margin-right: 2%;
+    }
+
+    .weather {
+
+    }
+}

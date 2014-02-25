@@ -1,0 +1,19 @@
+.results {
+	-webkit-column-fill: auto;
+	-moz-column-fill: auto;
+	column-fill: auto;
+	@include column-count(4);
+	@include column-gap(10px);
+
+
+	.result {
+		display: inline-block;
+		background: #efefef;
+		margin: 0 2px 15px;
+		@include column-break-inside(avoid);
+		padding: 15px;
+		opacity: 1;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		line-height: 1.3em;
+	}
+}
