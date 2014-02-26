@@ -12,6 +12,7 @@
     "grunt-contrib-watch": "*",
     "grunt-contrib-compass": "*",
     "grunt-express-server": "*",
-    "grunt-concurrent": "~0.4.3"
+    "grunt-concurrent": "~0.4.3",
+    "grunt-parallel": "*"
   }
 }
