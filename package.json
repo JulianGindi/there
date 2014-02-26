@@ -10,6 +10,8 @@
     "grunt": "*",
     "grunt-contrib-coffee": "*",
     "grunt-contrib-watch": "*",
-    "grunt-contrib-compass":"*"
+    "grunt-contrib-compass": "*",
+    "grunt-express-server": "*",
+    "grunt-concurrent": "~0.4.3"
   }
 }

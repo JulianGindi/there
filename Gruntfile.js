@@ -1,38 +1,36 @@
+var path = require('path');
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    coffee: {
-      compile: {
-        files: {
-          'app.js': 'app.coffee',
-          'build/there.js': ['src/js/*.coffee']
-        }
-      }
-    },
-
-    watch: {
-      scripts: {
-        files: ['src/js/*.coffee', 'app.coffee'],
-        tasks: ['coffee']
-      },
-      css: {
-        files: ['sass/*.scss', 'sass/partials/*.scss'],
-        tasks:['compass']
-      }
-    },
-
-    compass: {
-      dist: {
-        options: {
-          config: 'config.rb'
-        }
+    meta: {
+      port: '3000',
+      dirs: {
+        root: '.',
+        public: './static',
+        css: './static/css',
+        images: './static/images',
+        js: './static/js-dev',
+        sass: './sass',
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.registerTask('default', ['watch']);
+  grunt.loadTasks('./grunt');
+
+  grunt.registerTask('default', [
+    'compileAssets'
+  ]);
+
+  grunt.registerTask('compileAssets', [
+    'browserify',
+    'copy:dev'
+  ]);
+
+  grunt.registerTask('dev',
+    'Starting a live reloading dev webserver on localhost. ', [
+    'default',
+    'concurrent'
+  ]);
+
 };
