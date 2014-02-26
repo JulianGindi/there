@@ -6,7 +6,7 @@
 
 	<link rel="stylesheet" href="css/screen.css">
 </head>
-<body class="paused" ng-app="there">
+<body class="paused">
 	<header class="top-header">
 		<section class="search-part">
 			<div class="container">
@@ -48,14 +48,22 @@
 			</section>
 
 			<section class="results">
+                            <video id="localVideo" autoplay></video>
+                            <video id="remoteVideo" autoplay></video>
 
+                            <div>
+                              <button id="startButton">Start</button>
+                              <button id="callButton">Call</button>
+                              <button id="hangupButton">Hang Up</button>
+                            </div>
 			</section>
 		</div>
 	</section>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFZhP_XM0Rm2S8sgcIHfNgzxe0GmqtFTw&sensor=true"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src='js/adapter.js'></script>
     <script src="js/app.js"></script>
+
 </body>
 </html>
