@@ -1,13 +1,17 @@
 (function() {
-  var app, express, io;
+  var app, express;
 
   express = require('express');
 
   app = express();
 
-  require('./build/there.js')(app);
+  app.use(express["static"](__dirname + '/static'));
 
-  io = require('./build/there.js').listen(app);
+  app.get('/', function(req, res) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.sendfile(__dirname + '/static/index.html');
+    return res.end();
+  });
 
   app.listen(3000);
 
