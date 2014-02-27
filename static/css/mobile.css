@@ -110,7 +110,9 @@ a {
   display: inline-block;
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
-  padding: 25px 60px 25px 60px;
+  width: 210px;
+  height: 70px;
+  line-height: 70px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
@@ -122,12 +124,12 @@ a {
   font-size: 1.3em;
   font-weight: 800;
 }
-/* line 54, ../../sass/mobile.scss */
+/* line 56, ../../sass/mobile.scss */
 a:focus, a:active {
   outline: none;
 }
 
-/* line 59, ../../sass/mobile.scss */
+/* line 61, ../../sass/mobile.scss */
 .logo {
   width: 100%;
   max-width: 80px;
@@ -136,4 +138,32 @@ a:focus, a:active {
   bottom: 20px;
   left: 50%;
   margin-left: -40px;
+}
+
+/* line 71, ../../sass/mobile.scss */
+.video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 77, ../../sass/mobile.scss */
+.video-container video {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 83, ../../sass/mobile.scss */
+.stop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -35px;
+  margin-left: -105px;
+}
+
+/* line 90, ../../sass/mobile.scss */
+.hide {
+  display: none;
 }
