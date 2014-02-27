@@ -8,7 +8,8 @@ module.exports = function(grunt) {
         files: {
           'app.js': 'app.coffee',
           'build/there.js': ['src/js/*.coffee'],
-          'static/js/app.js': 'static/js-dev/app.coffee'
+          'static/js/app.js': 'static/js-dev/app.coffee',
+          'static/js/mobile.js' : 'static/js-dev/mobile.coffee'
         }
       }
     },

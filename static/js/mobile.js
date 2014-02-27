@@ -1,27 +1,25 @@
 (function() {
-  var name, webrtc;
-
   $(".connect").click(function(event) {
+    var name, webrtc;
     webrtc = new SimpleWebRTC({
-        localVideoEl: 'mine',
-        remoteVideosEl: '',
-        autoRequestMedia: true
+      localVideoEl: 'mine',
+      remoteVideoEl: '',
+      autoRequestMedia: true
     });
-
-      name = 'pipikaka';
-
-    webrtc.on('readyToCall', function() {
-        $(".video-container").removeClass('hide');
-        console.log('ready to call');
-        console.log('joining room isl');
-        return webrtc.joinRoom('isl');
+    name = 'pipikaka';
+    return webrtc.once('readyToCall', function() {
+      $(".video-container").removeClass('hide');
+      console.log("Ready to call");
+      console.log("Joining room isl");
+      return webrtc.joinRoom('isl');
     });
-
   });
 
   $(".stop").click(function(event) {
-    console.log('click stop');
-    webrtc.leaveRoom(name);
+    console.log("Click stop");
+    webrtc.stopLocalVideo();
+    webrtc.leaveRoom(room);
+    return webrtc.hangUp();
   });
 
 }).call(this);
