@@ -31,7 +31,7 @@ module.exports = function(grunt) {
     },
     watch: {
       web: {
-        files: ['src/js/*.coffee', 'app.coffee', 'sass/*.scss', 'sass/**/*.scss'],
+        files: ['src/js/*.coffee', 'app.coffee', 'sass/*.scss', 'sass/**/*.scss', 'static/js-dev/*.coffee'],
         tasks: ['coffee', 'compass', 'express:web'],
         options: {
             nospawn: true,
