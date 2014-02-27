@@ -4,9 +4,10 @@ app = express()
 app.use(express.static(__dirname + '/static'))
 
 app.get('/', (req,res) ->
-    res.setHeader('Content-Type', 'text/plain')
-    res.sendfile(__dirname + '/static/index.html')
-    res.end())
+    res.sendfile(__dirname + '/static/index.html'))
+
+app.get('/mobile', (req,res) ->
+    res.sendfile(__dirname + '/static/mobile.html'))
 
 app.listen(3000)
 console.log("Listening on port 3000")

@@ -7,8 +7,16 @@ module.exports = function(grunt) {
         options: { join: true },
         files: {
           'app.js': 'app.coffee',
-          'build/there.js': ['src/js/*.coffee'],
-          'static/js/app.js': 'static/js-dev/app.coffee'
+          'build/there.js': ['src/js/*.coffee']
+        }
+      }
+    },
+    compass: {
+      dev: {
+        options: {
+          sassDir: ['sass'],
+          cssDir: ['static/css'],
+          environment: 'development'
         }
       }
     },
@@ -21,14 +29,14 @@ module.exports = function(grunt) {
     },
     watch: {
       web: {
-        files: ['src/js/*.coffee', 'app.coffee', 'static/js-dev/app.coffee'],
-        tasks: ['coffee', 'express:web'],
+        files: ['src/js/*.coffee', 'app.coffee', 'sass/*.scss', 'sass/**/*.scss'],
+        tasks: ['coffee', 'compass', 'express:web'],
         options: {
             nospawn: true,
             livereload: true,
             atBegin: true
         },
-      }
+      },
     },
     parallel: {
         web: {
@@ -46,8 +54,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-parallel');
-
 
   grunt.registerTask('web', 'launch webserver and watch tasks', ['parallel:web']);
   grunt.registerTask('default', ['web']);
