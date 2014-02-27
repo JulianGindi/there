@@ -1,13 +1,18 @@
-var webrtc = new SimpleWebRTC({
+(function() {
+  var name, webrtc;
+
+  webrtc = new SimpleWebRTC({
     localVideoEl: 'localVideo',
     remoteVideosEl: 'remotesVideos',
     autoRequestMedia: true
-});
+  });
 
+  name = $("#roomname").val();
 
-var name = $("#roomname").val();
-webrtc.on('readyToCall', function () {
+  webrtc.on('readyToCall', function() {
     console.log('ready to call');
-        console.log('joining room pipikaka');
-    webrtc.joinRoom('pipikaka');
-});
+    console.log('joining room isl');
+    return webrtc.joinRoom('isl');
+  });
+
+}).call(this);

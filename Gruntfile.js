@@ -7,7 +7,8 @@ module.exports = function(grunt) {
         options: { join: true },
         files: {
           'app.js': 'app.coffee',
-          'build/there.js': ['src/js/*.coffee']
+          'build/there.js': ['src/js/*.coffee'],
+          'static/js/app.js': 'static/js-dev/app.coffee'
         }
       }
     },
