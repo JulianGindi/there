@@ -1,0 +1,22 @@
+/* compass stuff */
+@import "compass";
+@import "compass/reset";
+
+
+/* custom mixins */
+@import "partials/_placeholderText";
+@import "partials/_arrows";
+
+
+/* general layout */
+.container {
+	width: 95%;
+	max-width: 1024px;
+	margin: 0px auto;
+}
+
+
+/* partials */
+@import "partials/_header";
+@import "partials/_filter";
+@import "partials/_geo";

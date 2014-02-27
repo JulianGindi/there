@@ -4,11 +4,13 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "socket.io": "*"
   },
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-coffee": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-express-server": "~0.4.13"
   }
 }

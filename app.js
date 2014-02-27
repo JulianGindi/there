@@ -5,7 +5,15 @@
 
   app = express();
 
-  require('./build/there.js')(app);
+  app.use(express["static"](__dirname + '/static'));
+
+  app.get('/', function(req, res) {
+    return res.sendfile(__dirname + '/static/index.html');
+  });
+
+  app.get('/mobile', function(req, res) {
+    return res.sendfile(__dirname + '/static/mobile.html');
+  });
 
   app.listen(3000);
 
