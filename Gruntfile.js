@@ -6,8 +6,10 @@ module.exports = function(grunt) {
       compile: {
         options: { join: true },
         files: {
-          'app.js': 'app.coffee',
-          'build/there.js': ['src/js/*.coffee'],
+          'app.js': 'src/js/app.coffee',
+          'build/routes.js': ['src/js/routes.coffee'],
+          'build/social.js': ['src/js/social.coffee'],
+          'build/sockets.js': ['src/js/sockets.coffee'],
           'static/js/app.js': 'static/js-dev/app.coffee'
         }
       }
@@ -15,7 +17,7 @@ module.exports = function(grunt) {
     compass: {
       dev: {
         options: {
-          sassDir: ['sass'],
+          sassDir: ['static/sass'],
           cssDir: ['static/css'],
           environment: 'development'
         }
@@ -30,7 +32,7 @@ module.exports = function(grunt) {
     },
     watch: {
       web: {
-        files: ['src/js/*.coffee', 'app.coffee', 'sass/*.scss', 'sass/**/*.scss'],
+        files: ['src/js/*.coffee', 'src/js/app.coffee', 'static/sass/*.scss', 'static/sass/**/*.scss'],
         tasks: ['coffee', 'compass', 'express:web'],
         options: {
             nospawn: true,
