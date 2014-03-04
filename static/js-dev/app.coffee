@@ -1,7 +1,7 @@
 webrtc = new SimpleWebRTC
     localVideoEl: 'localVideo'
     remoteVideosEl: 'remotesVideos'
-    autoRequestMedia: true
+    autoRequestMedia: false
 
 
 name = $("#roomname").val()
